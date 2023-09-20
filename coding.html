@@ -3,6 +3,7 @@
     <head>
         <title>Blackspot.com/coding</title>
         <link rel="icon" href="img/hack1.jpeg">
+        <!-- style Sheet  . .. -->
         <style>
              body{
                 background-color: #f4f4f4;
@@ -29,10 +30,16 @@
             .highlight{
                 color: orangered;
             }
+            .proglang{
+                display: inline-table;
+                margin: 2%;
+                
+            }
         </style>
 
     </head>
     <body>
+        <!-- panel  ... -->
         <div class="services">
             <nav>
                 <ul>
@@ -43,6 +50,44 @@
                     <li><a href="about.html"> About Developer </li></a>
                 </ul>
             </nav>
+        </div>
+        <!--select programing language   ..-->
+        <div class="proglang">
+            <label for="Sel">Choose Programing Language:</label>
+            <select id="sel" onchange="myfunction()">
+                <option> PYTHON </option>
+                <option> C </option>
+                <option> C++ </option>
+                <option> Java </option>
+                <option> C# </option>
+                <option> SHELL SCRIPT </option>
+                <option> BATCH SCRIPT </option>
+                <option> JAVA SCRIPT </option>
+                <option> PHP </option>
+                <option> HTML </option>
+                <option> CSS </option>
+                <option> RUPY </option>
+
+            </select>
+            
+
+        </div>
+        <!--Java script   ... -->
+        <div>
+            <script>
+                /*  Select onchange function */
+                function myfunction(){
+                    var x=document.getElementById("sel");
+                    var i=x.selectedIndex;
+                    <!--storing select val in variable ...-->
+                    const val=x.options[i].text;
+                    
+
+                }
+              
+                
+            </script>
+
         </div>
 
     </body>
