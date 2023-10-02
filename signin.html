@@ -1,82 +1,91 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Blackspot.com/signin</title>
-        <link rel="icon" href="img/icon.jpg">
-        <style>
-            
-            .form{
-                background-color: gray;
-                
-              
-                
-                
-            }
-            
-            form{
-                background-color: #f4f4f4;
-                margin: 0.3%;
-                text-transform: uppercase;
-                min-height: 1000px;
-                
-                
-                
-            }
-            label{
-                margin-left: 3%;
-                font-style: italic;
-                font-size: x-large;
-                
-            }
-            span{
-                margin-left: 20%;
-                margin-bottom: 10%;
-            }
-            br{
-                margin-bottom: 10%;
-            }
-            .submit{
-                background-color: aqua;
-                padding: 2%;
-                padding-inline-start: 15%;
-                padding-inline-end: 15%;
-                font-size: x-large;
-            }
-            
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webauth</title>
+</head>
+<body>
+    <h1>texting web auth</h1>
+    <input type="text" id="username">
+    <input type="email" id="gmail">
+    <input type="text" id="pass">
+    <input type="submit"id="signup" value="signup">
+    <input type="submit" value="signin" id="signin">
+
+
+
+    <script type="module">
+      
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
         
-        </style>
+        
+     
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBpoL5xVUayIeAGtmbbNVgpjMmfO3V4tjY",
+          authDomain: "webaut-9abc2.firebaseapp.com",
+          projectId: "webaut-9abc2",
+          storageBucket: "webaut-9abc2.appspot.com",
+          messagingSenderId: "652373857140",
+          appId: "1:652373857140:web:564b3b7122cee56f571221"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database=getDatabase(app);
+        const auth = getAuth();
+        // Create new user account .....
+        signup.addEventListener("click",(e)=>{
+          var email=document.getElementById("gmail").value;
+          var password=document.getElementById("pass").value;
+          var username=document.getElementById("username").value;
+          createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            const user = userCredential.user;
+            alert("created New user account successfully....");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert("errorMessage");
+          });
+        })
+        // Login to new usert account ... 
+        signin.addEventListener("click",(e)=>{
+          var email=document.getElementById("gmail").value;
+          var password=document.getElementById("pass").value;
+          var username=document.getElementById("username").value;
+          signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            const user = userCredential.user;
+            
+            window.location.href="signinpage.html","_blank";
+            alert("signin successfully");
 
-    </head>
-    <body>
-        <div class="a">
-            <div class="form" id="form">
-                <form action="mailto:mharishmharish121@gmail.com?subject=Mail from blackspot.com/signin Website" method="post" enctype="text/plain">
-                    <label> Name: </label><br>
-                    <span><input type="text" name="Name "></span><br>
-                    <label> DOP: </label><br>
-                    <span><input type="date" name="DOP "></span><br>
-                    <label> Gmail: </label><br>
-                    <span><input type="email" name="Gmail "></span><br>
-                    <label> Phone Number: </label><br>
-                    <span><input type="number" name="Phone "></span><br>
-                    <label> Gender: </label><br>
-                    <label> Male =</label>
-                    <input type="radio" name="Gender" id="gender" value="male">
-                    <label> Female =</label>
-                    <input type="radio" name="Gender" id="gender" value="female">
-                    <label> Other =</label>
-                    <input type="radio" name="Gender" id="gender" value="other">
-                    
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+          });
+
+        })
 
 
-                    <br>
-                    <center><input type="submit" value="send" class="submit"></center>
+       
+        
 
 
-                </form>
 
-            </div>
-        </div>
 
-    </body>
+
+        
+      </script>
+      
+</body>
 </html>
