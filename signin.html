@@ -36,6 +36,11 @@
       .form .but{
         background-color: aqua;
         border-radius: 0%;
+        font-size: large;
+        font-weight: bold;
+      }
+      .error{
+        color: red;
       }
       
 
@@ -46,7 +51,7 @@
   <div class="form">
     <span><h1 id="text">Create New Account or Login</h1></span>
     <label> Username: </label><input type="text" id="username" placeholder="User Name "><br>
-    <label> Gmail: </label><input type="email" id="gmail" placeholder="Gmail Id"><br>
+    <label> Gmail: </label><input type="email" id="gmail" placeholder="Gmail Id"><br><small id="errortext" class="error"></small><br>
     <label> Password: </label><input type="password" id="pass" placeholder="password"><br>
     <input type="submit"id="signup" value="signup" class="but">
     <input type="submit" value="signin" id="signin" class="but">
@@ -110,7 +115,14 @@
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            console.log(errorMessage);
+            if (errorMessage=="Firebase: Error (auth/invalid-email).") {
+              document.getElementById("errortext").innerHTML = " Invalid-email !";
+            
+            }
             alert(errorMessage);
+          
+            
           });
 
         })
