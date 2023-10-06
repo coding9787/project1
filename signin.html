@@ -107,9 +107,11 @@
           var username=document.getElementById("username").value;
           signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
+            localStorage.setItem('myValue', username);
             
-            window.location.href="index.html","_blank";
+            window.location.href="index.html";
             alert("signin successfully");
+          
 
           })
           .catch((error) => {
@@ -121,11 +123,14 @@
             
             }
             alert(errorMessage);
+            localStorage.setItem("inputValue", "hi");
           
             
           });
 
         })
+    
+        
 
 
        
