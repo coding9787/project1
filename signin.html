@@ -107,10 +107,9 @@
           var username=document.getElementById("username").value;
           signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
-            localStorage.setItem('myValue', username);
-            
             window.location.href="index.html";
-            alert("signin successfully");
+            
+            
           
 
           })
@@ -118,12 +117,13 @@
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
+          
             if (errorMessage=="Firebase: Error (auth/invalid-email).") {
               document.getElementById("errortext").innerHTML = " Invalid-email !";
             
             }
             alert(errorMessage);
-            localStorage.setItem("inputValue", "hi");
+           
           
             
           });
