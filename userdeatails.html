@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackspot.com/user_info</title>
+    <style>
+        .form{
+            margin: 3%;
+            border: 5px solid;
+            border-color: black;
+        }
+        .center{
+            text-align: center;
+            margin: 2%;
+            
+        }
+        .center label{
+            font-size: larger;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .center input{
+            padding: 1%;
+            font-size: large;
+        }
+        
+    </style>
 </head>
 <body>
+    <div>
+        <div class="form">
+            <form>
+                <div class="center"><Label for="firstname"> First Name: </Label><input type="text" placeholder=" First Name " id="firstname"></div><br>
+                <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lastname"></div><br>
+                <div class="center"><Label for="email"> Gmail: </Label><input type="email" placeholder=" Enter your Gmail " id="email"></div><br>
+                <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" maxlength="10" type="number" placeholder=" Phone Number " id="phonenumber"></div><br>
+                <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dop"></div><br>
+                <div><Label for="gender"> Gender: </Label><br>
+                    <span><label>Male </label><input type="radio" name="gender" value="Male">
+                    <label>Female </label><input type="radio" name="gender" value="Female">
+                    <label>Other </label><input type="radio" name="gender" value="Other"></span>
+                </div><br>
+                <div><Label for="address"> Address: </Label>
+                    <label> Street: </label><input type="text" placeholder=" street " id="street">
+                    <label> City: </label><input type="text" placeholder=" city " id="city"><br>
+                    <label> District: </label><input type="text" placeholder=" district " id="district">
+                    <label> State: </label><input type="text" placeholder=" state " id="state"><br>
+                    <label> Country: </label><input type="text" placeholder=" country " id="country">
+                    <label> Pincode: </label><input  type="number" placeholder=" EX:625401 " id="pincode" size="6" maxlength="6">
+                </div><br>
+
+
+
+            </form>
+        </div>
+    </div>
     
 </body>
 </html>
