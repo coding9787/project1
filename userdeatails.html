@@ -24,34 +24,84 @@
             padding: 1%;
             font-size: large;
         }
+        .cent{
+            text-align: center;
+        }
+        .cent .hili{
+            font-weight: bold;
+            font-style: italic;
+            font-size: larger;
+        }
+        .cent input{
+            margin: 2%;
+            padding: 1%;
+            
+        }
+        .butpanel{
+            text-align: center;
+            margin: 5%;
+          
+        }
+        .butpanel input{
+            padding: 2%;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: aqua;
+            border-radius: 25px;
+            box-shadow: inset;
+            margin: 5%;
+            text-align: center;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+
+        }
+        .pannel{
+            margin: 1%;
+
+            text-align: center;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            background-color: rgb(177, 171, 171);
+            color: white;
+            
+        }
+        .pannel span{
+            color: rgb(224, 67, 27);
+            
+        }
+       
         
     </style>
+    
+    <script src="ha.js"></script> 
 </head>
 <body>
     <div>
         <div class="form">
-            <form>
+            <form >
+                <div class="pannel"><h1>Welcome to <span>Blackspot.com</span></h1></div>
                 <div class="center"><Label for="firstname"> First Name: </Label><input type="text" placeholder=" First Name " id="firstname"></div><br>
                 <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lastname"></div><br>
                 <div class="center"><Label for="email"> Gmail: </Label><input type="email" placeholder=" Enter your Gmail " id="email"></div><br>
-                <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" maxlength="10" type="number" placeholder=" Phone Number " id="phonenumber"></div><br>
+                <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" min="1000000000" max="10000000000" type="number" placeholder=" Phone Number " id="phonenumber"></div><br>
                 <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dop"></div><br>
-                <div><Label for="gender"> Gender: </Label><br>
+                <div class="cent"><Label for="gender" class="hili"> Gender: </Label><br>
                     <span><label>Male </label><input type="radio" name="gender" value="Male">
                     <label>Female </label><input type="radio" name="gender" value="Female">
                     <label>Other </label><input type="radio" name="gender" value="Other"></span>
                 </div><br>
-                <div><Label for="address"> Address: </Label>
+                <div class="cent"><Label for="address" class="hili"> Address: </Label><br>
                     <label> Street: </label><input type="text" placeholder=" street " id="street">
                     <label> City: </label><input type="text" placeholder=" city " id="city"><br>
                     <label> District: </label><input type="text" placeholder=" district " id="district">
                     <label> State: </label><input type="text" placeholder=" state " id="state"><br>
                     <label> Country: </label><input type="text" placeholder=" country " id="country">
-                    <label> Pincode: </label><input maxlength="4" size="4" type="number" placeholder=" EX:625401 " id="pincode">
+                    <label> Pincode: </label><input min="100000" max="999999" type="number" placeholder=" EX:625401 " id="pincode">
                 </div><br>
-                <div>
-                    <input type="submit">
-                    <input type="reset"
+                <div class="butpanel">
+                    <input type="submit" value="Submit" id="signup">
+                    <input type="reset" value="Reset">
                 </div>
 
 
@@ -59,6 +109,8 @@
             </form>
         </div>
     </div>
+
+
     
 </body>
 </html>
