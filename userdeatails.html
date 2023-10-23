@@ -150,7 +150,7 @@
         function writeUserData(a,b,c,d) {
             console.log("writing user data on firebase");
             console.log(db);
-            set(ref(db, 'users/' + a), {
+            set(ref(db, 'users/' + c), {
                 Username: a,
                 Gmail: b,
                 Phonenumber:c,
@@ -165,12 +165,18 @@
         document.querySelector('#signup').addEventListener('click', (e)=>{
             console.log("button trigered");
             var username=document.getElementById("firstname").value;
+            var email=document.getElementById("email").value;
+            var phonenumber=document.getElementById("phonenumber").value;
+            var dob=document.getElementById("dob").value;
+
+            
             console.log("buttonclicked_username",username);         
             /*checking not null*/
             if (username!="") {
                 console.log("not null");
-                writeUserData(username,"dfghdhcghg","ggchfhg","fghgghhf")
-                console.log("Submited userdeatails");           
+                writeUserData(username,email,phonenumber,dob)
+                console.log("Submited userdeatails");
+                window.open("index.html");       
                 
             }
           
