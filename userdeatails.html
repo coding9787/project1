@@ -42,7 +42,21 @@
             margin: 5%;
           
         }
-        .butpanel input{
+        .butpanel button{
+            padding: 2%;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: aqua;
+            border-radius: 25px;
+            box-shadow: inset;
+            margin: 5%;
+            text-align: center;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+
+        }
+           .butpanel input{
             padding: 2%;
             padding-left: 5%;
             padding-right: 5%;
@@ -85,7 +99,7 @@
                 <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lastname"></div><br>
                 <div class="center"><Label for="email"> Gmail: </Label><input type="email" placeholder=" Enter your Gmail " id="email"></div><br>
                 <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" min="1000000000" max="10000000000" type="number" placeholder=" Phone Number " id="phonenumber"></div><br>
-                <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dop"></div><br>
+                <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dob"></div><br>
                 <div class="cent"><Label for="gender" class="hili"> Gender: </Label><br>
                     <span><label>Male </label><input type="radio" name="gender" value="Male">
                     <label>Female </label><input type="radio" name="gender" value="Female">
@@ -100,7 +114,7 @@
                     <label> Pincode: </label><input min="100000" max="999999" type="number" placeholder=" EX:625401 " id="pincode">
                 </div><br>
                 <div class="butpanel">
-                    <input type="submit" value="Submit" id="signup">
+                    <button value="Submit" id="signup" ></button>
                     <input type="reset" value="Reset">
                 </div>
 
@@ -112,12 +126,8 @@
 
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
         import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
         // Your web app's Firebase configuration
         const firebaseConfig = {
           apiKey: "AIzaSyBpoL5xVUayIeAGtmbbNVgpjMmfO3V4tjY",
@@ -128,28 +138,51 @@
           messagingSenderId: "652373857140",
           appId: "1:652373857140:web:564b3b7122cee56f571221"
         };
-      
-        // Initialize Firebase
+
+               // Initialize Firebase
+       
+
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
-        console.log(db);
-
-
+        var username=document.getElementById("firstname").value;
+        console.log("default username",username);
+        
+        function writeUserData(a,b,c,d) {
+            alert("write user data trigered");
+            console.log(db);
+            set(ref(db, 'users/' + a), {
+                username: a,
+                gmail: b,
+                phonenumber:c,
+                dob:d
+          
+            });
+            alert("write userdata end");
+            
+     
+      
+        };
+        console.log("button out",username);
+        writeUserData("default","gfgdf","gffh","fhfg")
+        
+       
+        
+      
         
 
-        function writeUserData(userId, name, email, imageUrl) {
-  
-            set(ref(db, 'users/' + userId), {
-                username: name,
-                email: email,
-                profile_picture : imageUrl
-            });
-        }
-        writeUserData("ha","dsdds","dssd","fdfdf")
+        document.querySelector('#signup').addEventListener('click', (e)=>{
+            alert("button clicked");
+            var username=document.getElementById("firstname").value;
+            console.log("buttonclicked",username);
+            
+        writeUserData(username,"dfghdhcghg","ggchfhg","fghgghhf")
+            
 
+})
+        
 
+    </script>
 
-      </script>
 
 
     
