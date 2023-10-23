@@ -95,7 +95,7 @@
         <div class="form">
             <form >
                 <div class="pannel"><h1>Welcome to <span>Blackspot.com</span></h1></div>
-                <div class="center"><Label for="firstname"> First Name: </Label><input type="text" placeholder=" First Name " id="firstname"></div><br>
+                <div class="center"><Label for="firstname"> First Name: </Label><input type="text"  id="firstname" placeholder=" First Name "></div><br>
                 <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lastname"></div><br>
                 <div class="center"><Label for="email"> Gmail: </Label><input type="email" placeholder=" Enter your Gmail " id="email"></div><br>
                 <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" min="1000000000" max="10000000000" type="number" placeholder=" Phone Number " id="phonenumber"></div><br>
@@ -114,7 +114,7 @@
                     <label> Pincode: </label><input min="100000" max="999999" type="number" placeholder=" EX:625401 " id="pincode">
                 </div><br>
                 <div class="butpanel">
-                    <button value="Submit" id="signup" ></button>
+                    <button value="Submit" id="signup" >Submit</button>
                     <input type="reset" value="Reset">
                 </div>
 
@@ -148,43 +148,34 @@
         console.log("default username",username);
         
         function writeUserData(a,b,c,d) {
-            alert("write user data trigered");
+            console.log("writing user data on firebase");
             console.log(db);
             set(ref(db, 'users/' + a), {
-                username: a,
-                gmail: b,
-                phonenumber:c,
-                dob:d
+                Username: a,
+                Gmail: b,
+                Phonenumber:c,
+                Dob:d
           
             });
-            alert("write userdata end");
-            
-     
+            console.log("write userdata compleated");
       
         };
-        console.log("button out",username);
-        writeUserData("default","gfgdf","gffh","fhfg")
-        
-       
-        
-      
-        
-
+        console.log("defaultusername",username);
+        writeUserData("Harish","mharishmharish121@gmail.com","9787452790","08:07:2004")
         document.querySelector('#signup').addEventListener('click', (e)=>{
-            alert("button clicked");
+            console.log("button trigered");
             var username=document.getElementById("firstname").value;
-            console.log("buttonclicked",username);
-            
-        writeUserData(username,"dfghdhcghg","ggchfhg","fghgghhf")
-            
-
-})
+            console.log("buttonclicked_username",username);         
+            /*checking not null*/
+            if (username!="") {
+                console.log("not null");
+                writeUserData(username,"dfghdhcghg","ggchfhg","fghgghhf")
+                
+            }
+          
+        })
         
-
     </script>
-
-
-
-    
+   
 </body>
 </html>
