@@ -101,9 +101,9 @@
                 <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" min="1000000000" max="10000000000" type="number" placeholder=" Phone Number " id="phonenumber"></div><br>
                 <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dob"></div><br>
                 <div class="cent"><Label for="gender" class="hili"> Gender: </Label><br>
-                    <span><label>Male </label><input type="radio" name="gender" value="Male">
-                    <label>Female </label><input type="radio" name="gender" value="Female">
-                    <label>Other </label><input type="radio" name="gender" value="Other"></span>
+                    <span><label>Male </label><input type="radio" name="gender" value="Male" id="gender">
+                    <label>Female </label><input type="radio" name="gender" value="Female" id="gender">
+                    <label>Other </label><input type="radio" name="gender" value="Other" id="gender"></span>
                 </div><br>
                 <div class="cent"><Label for="address" class="hili"> Address: </Label><br>
                     <label> Street: </label><input type="text" placeholder=" street " id="street">
@@ -168,6 +168,8 @@
             var email=document.getElementById("email").value;
             var phonenumber=document.getElementById("phonenumber").value;
             var dob=document.getElementById("dob").value;
+            var gender=document.getElementsByID("gender").value;
+            
 
             
             console.log("buttonclicked_username",username);         
