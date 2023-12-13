@@ -43,7 +43,13 @@
         .then((snapshot) => {
             if (snapshot.exists()) {
                 console.log(snapshot.val());
-                document.getElementById("para").innerHTML = snapshot.val();
+ //               var i=1;
+   //             snapshot.foreach((usersdata)=>{
+     //               key=usersdata.key;
+       //             uservalue=userdata.val();
+          //          console.log(uservalue.userName);
+            //    })
+               
 
             } else {
                 console.log("No data available");
