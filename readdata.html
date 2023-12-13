@@ -42,14 +42,12 @@
         get(child(dbRef, `users/${userId}`))
         .then((snapshot) => {
             if (snapshot.exists()) {
-                console.log(snapshot.val());
- //               var i=1;
-   //             snapshot.foreach((usersdata)=>{
-     //               key=usersdata.key;
-       //             uservalue=userdata.val();
-          //          console.log(uservalue.userName);
-            //    })
-               
+                console.log(snapshot.val(1));
+                var a=Object.values(snapshot.val());
+                console.log(a[2]);
+          
+                
+            
 
             } else {
                 console.log("No data available");
